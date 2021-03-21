@@ -1,18 +1,20 @@
 import { phrasesList } from './phrases';
 
 export const Phrase = (element) => {
-  let category = null;
-  let phrase = null;
+  const state = {
+    phrase: null,
+    category: null,
+  };
 
   const init = () => {
     const categoryElement = element.querySelector('h6 span');
     const phraseElement = element.querySelector('h2');
 
-    category = getRandomCategory();
-    categoryElement.innerHTML = category;
+    state.category = getRandomCategory();
+    categoryElement.innerHTML = state.category;
 
-    phrase = maskPhrase(getRandomPhrase(category));
-    phraseElement.innerHTML = phrase;
+    state.phrase = getRandomPhrase(state.category);
+    phraseElement.innerHTML = maskPhrase(state.phrase);
   };
 
   const getRandomCategory = () => {
@@ -27,6 +29,7 @@ export const Phrase = (element) => {
 
   const maskPhrase = (phrase) => {
     const chars = phrase.split('');
+
     return chars.reduce(
       (phrase, char) => {
         const maskingChar = char === ' ' ? '&emsp;' : '_';
@@ -36,5 +39,20 @@ export const Phrase = (element) => {
     );
   };
 
-  return { init };
+  const checkChar = (selectedChar) => {
+    const chars = state.phrase.split('');
+    const phraseSpans = Array.from(element.querySelectorAll('h2 span'));
+
+    let found = false;
+    chars.map((char, index) => {
+      if (char.toLowerCase() === selectedChar) {
+        phraseSpans[index].innerHTML = char;
+        found = true;
+      }
+    });
+
+    return found;
+  };
+
+  return { init, checkChar };
 };

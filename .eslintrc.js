@@ -16,5 +16,6 @@ module.exports = {
     'no-shadow': 'off',
     'no-param-reassign': ['error', { props: false }],
     'no-return-assign': 'off',
+    'array-callback-return': 'off',
   },
 };
