@@ -5,7 +5,50 @@
   h1 {
     margin-bottom: 2rem;
   }
+
   .phrase h6 {
     margin-bottom: 2rem;
+  }
+
+  .board {
+    width: 100%;
+    margin-top: 1rem;
+
+    .keyboard {
+      padding: 1rem;
+      width: 100%;
+
+      button {
+        width: 18%;
+      }
+
+      .disabled-success {
+        background-color: #067354;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .board {
+    max-width: 75%;
+    max-height: 300px;
+
+    .keyboard {
+      max-width: 50%;
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  .board {
+    max-width: 50%;
+    max-height: 300px;
+
+    .keyboard {
+      max-width: 50%;
+    }
   }
 }
