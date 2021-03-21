@@ -17,5 +17,6 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'no-return-assign': 'off',
     'array-callback-return': 'off',
+    'no-plusplus': 'off',
   },
 };

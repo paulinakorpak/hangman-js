@@ -32,6 +32,10 @@
         color: white;
       }
     }
+
+    .canvas {
+      width: 30%;
+    }
   }
 }
 
@@ -41,6 +45,10 @@
     max-height: 300px;
 
     .keyboard {
+      max-width: 50%;
+    }
+
+    .canvas {
       max-width: 50%;
     }
   }
@@ -53,6 +61,10 @@
     max-height: 300px;
 
     .keyboard {
+      max-width: 50%;
+    }
+
+    .canvas {
       max-width: 50%;
     }
   }
