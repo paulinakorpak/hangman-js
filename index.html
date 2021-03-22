@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="styles/main.css" rel="stylesheet">
+    <title>Hangman JS</title>
+</head>
+<body>
+    <div class="app container-sm d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title text-secondary">WISIELEC</h1>
+        <div class="phrase text-center">
+            <h6 class="text-secondary">Kategoria: <span></span></h6>
+            <h2 class="text-primary text-uppercase"></h2>
+        </div>
+        <div class="board d-flex justify-content-around">
+            <div class="keyboard flex-wrap d-flex gap-1"></div>
+            <div class="canvas d-flex justify-content-center align-items-center">
+                <canvas width="150" height="250"></canvas>
+            </div>
+        </div>
+        <div class="d-none alert alert-danger d-flex justify-content-center align-items-center h4 text-center">
+            Przykro mi, przegrałeś i wisisz...
+        </div>
+        <div class="d-none alert alert-success d-flex justify-content-center align-items-center h4 text-center">
+            Gratulacje, wygrałeś!
+        </div>
+    </div>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="dist/index.js"></script>
+
+</body></html>

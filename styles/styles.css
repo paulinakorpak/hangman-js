@@ -1,0 +1,73 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+.app h1 {
+  margin-bottom: 2rem;
+}
+.app .phrase h6 {
+  margin-bottom: 2rem;
+}
+.app .board {
+  width: 100%;
+  margin-top: 1rem;
+}
+.app .board .keyboard {
+  padding: 1rem;
+  width: 100%;
+}
+.app .board .keyboard button {
+  width: 18%;
+}
+.app .board .keyboard .disabled-success {
+  background-color: #067354;
+  color: white;
+}
+.app .board .keyboard .disabled-danger {
+  background-color: #A60303;
+  color: white;
+}
+.app .board .canvas {
+  width: 30%;
+}
+
+.alert-success, .alert-danger {
+  width: 80%;
+  height: 80%;
+  font-family: sans-serif;
+}
+
+@media (min-width: 768px) {
+  .board {
+    max-width: 75%;
+    max-height: 300px;
+  }
+  .board .keyboard {
+    max-width: 50%;
+  }
+  .board .canvas {
+    max-width: 50%;
+  }
+
+  .alert-success, .alert-danger {
+    max-width: 75%;
+    max-height: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .board {
+    max-width: 50%;
+    max-height: 300px;
+  }
+  .board .keyboard {
+    max-width: 50%;
+  }
+  .board .canvas {
+    max-width: 50%;
+  }
+
+  .alert-success, .alert-danger {
+    max-width: 50%;
+    max-height: 50%;
+  }
+}
