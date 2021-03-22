@@ -34,5 +34,7 @@ export const Canvas = (element) => {
     state.step++;
   };
 
-  return { init, draw };
+  const isCanvasCompleted = () => state.step === 9;
+
+  return { init, draw, isCanvasCompleted };
 };

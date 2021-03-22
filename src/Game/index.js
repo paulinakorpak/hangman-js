@@ -23,9 +23,26 @@ export const Game = (element) => {
 
   const checkChar = (selectedChar) => {
     const found = phrase.checkChar(selectedChar);
+    const phraseCompleted = phrase.isPhraseCompleted();
+    const canvasCompleted = canvas.isCanvasCompleted();
 
-    if (!found) {
+    const boardElement = element.querySelector('.board');
+    const successElement = element.querySelector('.alert-success');
+    const failureElement = element.querySelector('.alert-danger');
+
+    if (found) {
+      if (phraseCompleted) {
+        boardElement.classList.add('d-none');
+        successElement.classList.remove('d-none');
+      }
+    } else {
       canvas.draw();
+
+      if (canvasCompleted) {
+        phrase.showMissingChars();
+        boardElement.classList.add('d-none');
+        failureElement.classList.remove('d-none');
+      }
     }
 
     return found;

@@ -4,6 +4,7 @@ export const Phrase = (element) => {
   const state = {
     phrase: null,
     category: null,
+    numberOfChars: 0,
   };
 
   const init = () => {
@@ -14,6 +15,7 @@ export const Phrase = (element) => {
     categoryElement.innerHTML = state.category;
 
     state.phrase = getRandomPhrase(state.category);
+    state.numberOfChars = state.phrase.replace(/ /g, '').length;
     phraseElement.innerHTML = maskPhrase(state.phrase);
   };
 
@@ -47,6 +49,7 @@ export const Phrase = (element) => {
     chars.map((char, index) => {
       if (char.toLowerCase() === selectedChar) {
         phraseSpans[index].innerHTML = char;
+        state.numberOfChars--;
         found = true;
       }
     });
@@ -54,5 +57,20 @@ export const Phrase = (element) => {
     return found;
   };
 
-  return { init, checkChar };
+  const isPhraseCompleted = () => state.numberOfChars === 0;
+
+  const showMissingChars = () => {
+    const chars = state.phrase.split('');
+    const phraseSpans = Array.from(element.querySelectorAll('h2 span'));
+
+    chars.map((char, index) => {
+      if (phraseSpans[index].innerHTML === '_') {
+        phraseSpans[index].innerHTML = char;
+      }
+    });
+  };
+
+  return {
+    init, checkChar, isPhraseCompleted, showMissingChars,
+  };
 };
