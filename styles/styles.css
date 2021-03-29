@@ -5,7 +5,7 @@
 .app h1 {
   margin-bottom: 2rem;
 }
-.app .phrase h6 {
+.app .phrase h5 {
   margin-bottom: 2rem;
 }
 .app .board {
@@ -36,8 +36,19 @@
   height: 80%;
   font-family: sans-serif;
 }
+.alert-success button, .alert-danger button {
+  padding: 1rem;
+  margin-top: 4rem;
+}
+.alert-success button:hover, .alert-danger button:hover {
+  color: white;
+}
 
 @media (min-width: 768px) {
+  .phrase h6 {
+    font-size: 2rem;
+  }
+
   .board {
     max-width: 75%;
     max-height: 300px;
@@ -55,6 +66,10 @@
   }
 }
 @media (min-width: 992px) {
+  .phrase h6 {
+    font-size: 2rem;
+  }
+
   .board {
     max-width: 50%;
     max-height: 300px;
