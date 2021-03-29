@@ -8,8 +8,8 @@ export const Phrase = (element) => {
   };
 
   const init = () => {
-    const categoryElement = element.querySelector('h6 span');
-    const phraseElement = element.querySelector('h2');
+    const categoryElement = element.querySelector('h5 span');
+    const phraseElement = element.querySelector('h6');
 
     state.category = getRandomCategory();
     categoryElement.innerHTML = state.category;
@@ -43,7 +43,7 @@ export const Phrase = (element) => {
 
   const checkChar = (selectedChar) => {
     const chars = state.phrase.split('');
-    const phraseSpans = Array.from(element.querySelectorAll('h2 span'));
+    const phraseSpans = Array.from(element.querySelectorAll('h6 span'));
 
     let found = false;
     chars.map((char, index) => {
@@ -61,7 +61,7 @@ export const Phrase = (element) => {
 
   const showMissingChars = () => {
     const chars = state.phrase.split('');
-    const phraseSpans = Array.from(element.querySelectorAll('h2 span'));
+    const phraseSpans = Array.from(element.querySelectorAll('h6 span'));
 
     chars.map((char, index) => {
       if (phraseSpans[index].innerHTML === '_') {
