@@ -19,6 +19,13 @@ export const Game = (element) => {
     const canvasElement = element.querySelector('.canvas');
     canvas = Canvas(canvasElement);
     canvas.init();
+
+    const restartButton = element.querySelectorAll('.alert button');
+    Array.from(restartButton).map((button) => button.addEventListener('click', restart));
+  };
+
+  const restart = () => {
+    window.location.reload(true);
   };
 
   const checkChar = (selectedChar) => {

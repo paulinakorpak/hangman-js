@@ -43,6 +43,15 @@
   width: 80%;
   height: 80%;
   font-family: sans-serif;
+
+  button {
+    padding: 1rem;
+    margin-top: 4rem;
+
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 @media (min-width: 768px) {
